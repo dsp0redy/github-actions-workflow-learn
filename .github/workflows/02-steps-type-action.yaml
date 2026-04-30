@@ -13,3 +13,16 @@ jobs:
         runs-on: ubuntu-24.04
         steps:
             - run: echo $PWD
+
+    say-hello-in-line-python:
+        runs-on: ubuntu-24.04
+        steps:
+            - run: print("Hello People !!")
+              shell: python
+
+    say-hello-in-line-javascript:
+        runs-on: ubuntu-24.04
+        steps:
+            - uses: actions/hello-world-javascript-action@v1.1
+              with:
+                who-to-greet: "people !!"
