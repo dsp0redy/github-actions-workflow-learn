@@ -1,0 +1,15 @@
+name: 02-Steps Types Action
+
+on:
+    workflow_dispatch:
+
+jobs:
+    say-hello-in-line-bash:
+        runs-on: ubuntu-24.04
+        steps:
+            - run: echo "Hello people!!"
+
+    say-pwd-in-line-bash:
+        runs-on: ubuntu-24.04
+        steps:
+            - run: echo $PWD
