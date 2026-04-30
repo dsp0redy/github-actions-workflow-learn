@@ -3,6 +3,10 @@ name: 05 Envirionment Vairables Workflow
 on:
     workflow_dispatch:
 
+    push:
+
+    pull_request:
+
 env:
     GLO_VAR: GLOBAL VARIABLE
 
