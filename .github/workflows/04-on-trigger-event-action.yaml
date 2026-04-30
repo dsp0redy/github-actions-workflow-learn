@@ -1,0 +1,32 @@
+name: 04 On Trigger Event Action
+
+on:
+    workflow_dispatch:
+
+    pull_request:
+        branches:
+            - main
+            - develop
+            - bug-fix
+            - "**"
+    push:
+        branches:
+            - main
+
+        tags:
+            - v*
+jobs:
+    install-podman:
+
+        runs-on: ubuntu-latest
+
+        steps:
+            - run: sudo apt install podman
+            - run: podman --version
+
+    pull-debian-image:
+        needs:
+            - install-podman
+        runs-on: ubuntu-latest
+        steps:
+            - run: podman pull debian-bullseye
