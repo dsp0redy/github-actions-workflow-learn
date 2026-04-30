@@ -1,0 +1,33 @@
+name: 03 Jobs Steps Action
+
+on:
+    workflow_dispatch:
+
+jobs:
+    current-work-dir:
+        runs-on: ubuntu-24.04
+
+        steps:
+            - run: echo $PWD
+
+    create-a-file-and-print:
+        runs-on: ubuntu-24.04
+
+        needs:
+            - current-work-dir
+
+        steps:
+            - run: touch hello.txt
+            - run: echo "HI" > hello.txt
+            - run: cat hello.txt
+
+    install-docker-print-version:
+        runs-on: ubuntu-24.04
+
+        needs:
+            - current-work-dir
+            - create-a-file-and-print
+
+        steps:
+            - run: apt update && apt install docker
+            - run: docker --version
