@@ -1,4 +1,4 @@
-name: 02-Steps Types Action
+name: 02 Steps Types Action
 
 on:
     workflow_dispatch:
