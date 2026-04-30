@@ -1,10 +1,10 @@
 name : Hello World Action
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
 
 jobs:
   say-hello-in-line-bash:
-    runs-on: ubuntu24.04
+    runs-on: ubuntu-24.04
     steps:
-      - run : echo "Hello people "
+      - run: echo "Hello people!!"
