@@ -29,4 +29,4 @@ jobs:
             - install-podman
         runs-on: ubuntu-latest
         steps:
-            - run: podman pull debian-bullseye
+            - run: podman pull docker.io/library/debian:bullseye
