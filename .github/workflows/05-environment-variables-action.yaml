@@ -42,3 +42,9 @@ jobs:
                   echo "JOB 1 VARIABLE :- $JOB1_VAR"  # not visible
                   echo "JOB 2 VARIABLE :- $JOB2_VAR"  # not visible
                   cat "$GITHUB_EVENT_PATH"
+                  touch git-details.txt
+                  echo "git-details.txt" >> git-details.txt
+            - uses: actions/upload-artifact@v4
+              with:
+                  name: git-details
+                  path: git-details.txt
