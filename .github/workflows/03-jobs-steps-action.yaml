@@ -29,5 +29,5 @@ jobs:
             - create-a-file-and-print
 
         steps:
-            - run: sudo apt-get update && sudo apt install podman
-            - run: podman --version
+            - run: sudo apt-get update && sudo apt install buildah
+            - run: buildah --version
